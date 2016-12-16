@@ -10,6 +10,12 @@ router.route('/')
   .get(function(req, res){
     console.log('Hey from user!!');
     res.send({ok: true});
-  });
+  })
+// Error will be triggered if use /DELETE for /api/users
+  .delete(function(req,res,next){
+	var err = new Error("Error Triggered");
+	next(err);
+  })
+;	
 
 module.exports = router;

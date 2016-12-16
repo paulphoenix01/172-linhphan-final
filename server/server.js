@@ -21,6 +21,15 @@ mongoose.connect(config.db.url);
 //into  api module .
 app.use('/api/', api);
 
+// Error Handler Global Middleware
+app.use(function(err,req,res,next){
+        console.error(err.stack);
+        res.status(500).send("Some Errors Happened!")});
+
+
+
+
+
 // API endpoints such as below has been moved to user Router within api module
 //app.get('/user', function(req, res) {
    // res.send([{username:'wine1'}, {username:'wine2'}]);
