@@ -14,10 +14,18 @@ var PostSchema = new Schema({
   },
   // reference to the user who created this post
   author: 
-        {type: Schema.Types.ObjectId,
+   {type: Schema.Types.ObjectId,
          ref: 'user',
          required:true
-        }
+   },
+  // reference to categories, as an array of object id
+  // Assuming, category is optional
+	categories:
+	[{
+	category:
+		{type: Schema.Types.ObjectId,
+		ref:'post'}
+	}]	
 
 });
 

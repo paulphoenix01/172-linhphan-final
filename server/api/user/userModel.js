@@ -6,7 +6,11 @@ var UserSchema = new Schema({
     type: String,
     unique: true,
     required: true
-  }
+  },
+  // Address type String, assuming optional (required = false by default)
+	address:{
+		type:String
+	}
 });
 
 module.exports = mongoose.model('user', UserSchema);
