@@ -45,13 +45,13 @@ router.route('/:category_id')
 	})
 	// Delete category with _id = req.category_id
 	.delete(function(req,res){
-		post.remove({'_id': req.category_id}, function(err){
+		category.remove({'_id': req.category_id}, function(err){
 				if(err) throw err;
 		});
 	})
 	// Update a category with the name found n req.body.name
 	.put(function(req,res){
-		post.findOne({'_id':req.category_id}, function(err,theCate){
+		category.findOne({'_id':req.category_id}, function(err,theCate){
 			if(err) throw err;
 			theCate.name = req.body.name;
 		})
