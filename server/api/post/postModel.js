@@ -24,7 +24,7 @@ var PostSchema = new Schema({
 	[{
 	category:
 		{type: Schema.Types.ObjectId,
-		ref:'post'}
+		ref:'category'}
 	}]	
 
 });
